@@ -12,7 +12,7 @@ Build the Image:
 docker build -t hsrnetwork/dnsdist:lastest .
 ```
 
-## Getting Stated
+## Getting Started
 ```bash
 docker run -d -p 53:53 -p 53:53/udp hsrnetwork/dnsdist:lastest
 ```

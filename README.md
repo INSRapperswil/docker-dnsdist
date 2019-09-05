@@ -1,2 +1,22 @@
-# docker-dnsdist
-Dockerized dnsdist (https://dnsdist.org/)
+# PowerDNS dnsdist
+Dockerized version of dnsdist (https://dnsdist.org/).
+
+## Prerequisites
+```bash
+cp dnsdist.conf.tmpl dnsdist.conf
+# Edit the configuration according to your needs
+```
+
+Build the Image:
+```bash
+docker build -t hsrnetwork/dnsdist:lastest .
+```
+
+## Getting Stated
+```bash
+docker run -d -p 53:53 -p 53:53/udp hsrnetwork/dnsdist:lastest
+```
+or
+```bash
+docker-compose up -d
+```

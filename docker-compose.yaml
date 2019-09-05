@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  dnsdist:
+    image: hsrnetwork/dnsdist:lastest
+    hostname: dnsdist.example.com
+    restart: unless-stopped
+    ports:
+      - "53:53"
+      - "53:53/udp"
+    # To override the default dnsdist.conf:
+    #volumes:
+    #  - /path/to/dnsdist.conf:/opt/dnsdist/dnsdist.conf

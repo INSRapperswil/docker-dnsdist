@@ -7,10 +7,12 @@ cp dnsdist.conf.tmpl dnsdist.conf
 # Edit the configuration according to your needs
 ```
 
-Build the image:
+## Build the Image
 ```bash
 docker build -t hsrnetwork/dnsdist:lastest .
-# or
+```
+or
+```bash
 ALPINE_VER="3.12"
 DNSDIST_VER="1.4.0-r2"
 docker build \

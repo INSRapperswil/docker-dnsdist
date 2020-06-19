@@ -1,4 +1,4 @@
 #!/bin/sh
-DNSDIST_VER="1.4.0-r2"
+DNSDIST_VER="cat VERSION | grep DNSDIST_VERSION | cut -d'=' -f2"
 docker tag $DOCKER_REPO $DOCKER_REPO:$DNSDIST_VER
 docker push $DOCKER_REPO:$DNSDIST_VER

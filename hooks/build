@@ -1,6 +1,6 @@
 #!/bin/sh
-ALPINE_VER="cat VERSION | grep ALPINE_VERSION | cut -d'=' -f2"
-DNSDIST_VER="cat VERSION | grep DNSDIST_VERSION | cut -d'=' -f2"
+ALPINE_VER=`cat VERSION | grep ALPINE_VERSION | cut -d '=' -f2-`
+DNSDIST_VER=`cat VERSION | grep DNSDIST_VERSION | cut -d '=' -f2-`
 docker build \
   --build-arg DNSDIST_VERSION=$DNSDIST_VER \
   --build-arg ALPINE_VERSION=$ALPINE_VER \

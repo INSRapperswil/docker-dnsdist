@@ -1,9 +1,14 @@
-FROM alpine:3.10.2
+# If no build-arg "ALPINE_VERSION" is provided, use the default dnsdist version "3.12"
+ARG ALPINE_VERSION=3.12
+FROM alpine:${ALPINE_VERSION}
 
 LABEL maintainer="Philip Schmid <docker@ins.hsr.ch>"
 
+# If no build-arg "DNSDIST_VERSION" is provided, use the default dnsdist version "1.4.0-r2"
+ARG DNSDIST_VERSION=1.4.0-r2
+
 # Install dnsdist
-RUN apk add --no-cache dnsdist
+RUN apk add --no-cache dnsdist=${DNSDIST_VERSION}
 
 # Create working directory
 RUN mkdir -p /opt/dnsdist
